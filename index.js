@@ -21,19 +21,6 @@ var api = new ParseServer({
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
-  
-  verifyUserEmails: true,
-publicServerURL: ' https://capsulesocial.herokuapp.com/parse',
-appName: 'socialcapsule',
-emailAdapter: { 
-    module: 'parse-server-simple-mailgun-adapter',
-    options: { 
-               fromAddress: 'parse@example.com',
-               domain: 'betabulls.com', 
-               apiKey: 'key-b3a8487041c3ea3bcbc6a57031504773', 
-             }
- },
-  
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
@@ -64,6 +51,18 @@ var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('parse-server-example running on port ' + port + '.');
 });
+verifyUserEmails: true,
+publicServerURL: ' https://capsulesocial.herokuapp.com/parse',
+appName: 'socialcapsule',
+emailAdapter: { 
+    module: 'parse-server-simple-mailgun-adapter',
+    options: { 
+               fromAddress: 'parse@example.com',
+               domain: 'betabulls.com', 
+               apiKey: 'key-b3a8487041c3ea3bcbc6a57031504773', 
+             }
+ },
+
 // var server = ParseServer({
 // //... your other configurations
 // // here the configuration for email begins
