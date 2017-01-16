@@ -60,7 +60,7 @@ preventLoginWithUnverifiedEmail: false, // defaults to false
 
 publicServerURL: 'https://example.com/parse',
  // Your apps name. This will appear in the subject and body of the emails that are sent.
-appName: 'SocialCapsule,
+appName: 'SocialCapsule',
 
 // The email adapter
 emailAdapter: {
