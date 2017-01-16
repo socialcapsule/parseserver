@@ -51,28 +51,28 @@ var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('parse-server-example running on port ' + port + '.');
 });
-var server = ParseServer({
-//... your other configurations
-// here the configuration for email begins
-verifyUserEmails: true,  //depends on your needs, you can set it to false 
-emailVerifyTokenValidityDuration: 2 * 60 * 60, // in seconds (2 hours = 7200 seconds)
-preventLoginWithUnverifiedEmail: false, // defaults to false
+// var server = ParseServer({
+// //... your other configurations
+// // here the configuration for email begins
+// verifyUserEmails: true,  //depends on your needs, you can set it to false 
+// emailVerifyTokenValidityDuration: 2 * 60 * 60, // in seconds (2 hours = 7200 seconds)
+// preventLoginWithUnverifiedEmail: false, // defaults to false
 
-publicServerURL: 'https://example.com/parse',
- // Your apps name. This will appear in the subject and body of the emails that are sent.
-appName: 'SocialCapsule',
+// publicServerURL: 'https://example.com/parse',
+//  // Your apps name. This will appear in the subject and body of the emails that are sent.
+// appName: 'SocialCapsule',
 
-// The email adapter
-emailAdapter: {
-module: 'parse-server-simple-mailgun-adapter',
-options: {
-  // The address that your emails come from
-  fromAddress: 'parse@example.com',
-  // Your domain from mailgun.com
-  domain: 'example.com',
-  // Your API key from mailgun.com
-  apiKey: 'key-b3a8487041c3ea3bcbc6a57031504773',
-    }
-  }
+// // The email adapter
+// emailAdapter: {
+// module: 'parse-server-simple-mailgun-adapter',
+// options: {
+//   // The address that your emails come from
+//   fromAddress: 'parse@example.com',
+//   // Your domain from mailgun.com
+//   domain: 'example.com',
+//   // Your API key from mailgun.com
+//   apiKey: 'key-b3a8487041c3ea3bcbc6a57031504773',
+//     }
+//   }
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
